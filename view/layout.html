@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,700">
-        <title>Title</title>
+        <title>{{file.title}}</title>
         <style>
             html {
                 box-sizing: border-box;
@@ -116,12 +116,13 @@
             <ul>
                 {% for file in menu %}
                 <li>
-                    <a href="{{file.url}}">{{file.label}}</a>
+                    <a href="{{file.filename}}">{{file.title}}</a>
                 </li>
                 {% endfor %}
             </ul>
         </nav>
         <main class="article-item">
+            {{time.modified|date('Y-m-d')}}
             {{content|safe}}
         </main>
         <footer>
